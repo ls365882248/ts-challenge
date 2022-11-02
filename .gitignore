@@ -1,0 +1,11 @@
+node_modules
+*.log
+dist
+coverage
+package-lock.json
+.DS_Store
+*/.DS_Store
+report.*.json
+
+.history
+*/.history
