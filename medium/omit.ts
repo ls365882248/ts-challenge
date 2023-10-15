@@ -13,7 +13,8 @@ type MyExclude<T, U> =  T extends U ? never : T;
 // type MyOmit<T, K extends keyof T> = {[key in MyExclude<keyof T, K>]: T[key]}
 type MyOmit<T, K extends keyof T> = {
   // as 也作为类型推断依据
-  [P in keyof T as MyExclude<P, K>]: T[P];
+  // [P in keyof T as MyExclude<P, K>]: T[P];
+  [P in MyExclude<keyof T, K>]: T[P];
 };
 
 // type MyOmit<T, K extends keyof T> = {
